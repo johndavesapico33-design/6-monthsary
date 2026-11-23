@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love 💗</title>
+<style>
+  :root { --pink:#f7b8cc; --deep:#d95d89; --cream:#fff8f4; --ink:#704454; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; display:grid; place-items:center; overflow:hidden;
+    background:radial-gradient(circle at 20% 15%, #fff7fb, transparent 32%), linear-gradient(135deg,#ffe4ec,#ffd1df 55%,#fff0e7);
+    font-family:Georgia,'Times New Roman',serif; color:var(--ink); padding:24px;
+  }
+  .scene { width:min(100%,480px); text-align:center; position:relative; z-index:2; }
+  .intro { font-family:system-ui,sans-serif; color:#a45171; letter-spacing:.05em; font-size:.95rem; margin-bottom:18px; }
+  .envelope-wrap { height:270px; display:grid; place-items:center; perspective:1000px; }
+  .envelope { position:relative; width:min(350px,86vw); height:220px; cursor:pointer; filter:drop-shadow(0 14px 16px #b45b7830); transition:transform .3s; }
+  .envelope:hover { transform:translateY(-5px) rotate(-1deg); }
+  .back { position:absolute; inset:0; background:#e88cae; border-radius:12px; }
+  .flap { position:absolute; inset:0; background:#f5b6cb; clip-path:polygon(0 0,100% 0,50% 58%); transform-origin:top; transition:transform .75s ease; z-index:4; border-radius:10px 10px 0 0; }
+  .pocket { position:absolute; inset:0; background:linear-gradient(145deg,#f9c5d6,#e98eaf); clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%); z-index:3; border-radius:10px; }
+  .seal { position:absolute; z-index:5; left:50%; top:52%; transform:translate(-50%,-50%); font-size:32px; transition:opacity .3s; }
+  .hint { margin-top:-5px; font-family:system-ui,sans-serif; font-size:.88rem; color:#9e5876; }
+  .letter { display:none; opacity:0; transform:translateY(18px) scale(.98); background:rgba(255,252,249,.96); border:1px solid #f5c6d6; border-radius:22px; padding:26px 25px; box-shadow:0 20px 45px #b55d7825; text-align:left; max-height:70vh; overflow:auto; }
+  .letter h1 { text-align:center; font-size:1.65rem; color:#d15d87; margin:0 0 8px; }
+  .sub { text-align:center; font-family:system-ui,sans-serif; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:#c27a96; margin-bottom:22px; }
+  .message { font-size:1.08rem; line-height:1.85; white-space:pre-line; }
+  .signoff { text-align:center; color:#d15d87; font-size:1.35rem; margin-top:22px; }
+  .open .flap { transform:rotateX(180deg); z-index:1; }
+  .open .seal { opacity:0; }
+  .open .letter { display:block; animation:letterIn .8s .4s forwards; }
+  .open .envelope-wrap, .open .hint, .open .intro { display:none; }
+  .open .scene { width:min(100%,520px); }
+  .open body { overflow:auto; }
+  @keyframes letterIn { to { opacity:1; transform:translateY(0) scale(1); } }
+  .heart { position:fixed; bottom:-30px; color:#e77ba2; opacity:.55; animation:floatUp linear forwards; pointer-events:none; }
+  @keyframes floatUp { to { transform:translateY(-110vh) rotate(25deg); opacity:0; } }
+  .gallery { margin:26px 0 8px; text-align:center; }
+  .gallery h2 { color:#d15d87; font-size:1.25rem; margin:0 0 6px; }
+  .gallery-note { font-family:system-ui,sans-serif; color:#b56a87; font-size:.85rem; margin-bottom:14px; }
+  .photos { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+  .photo-card { background:#fff; padding:8px 8px 12px; border-radius:13px; box-shadow:0 5px 16px #b55d7820; transform:rotate(var(--tilt)); transition:transform .25s; }
+  .photo-card:hover { transform:rotate(0deg) scale(1.03); }
+  .photo-card img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; border-radius:8px; }
+  .photo-card span { display:block; font-family:system-ui,sans-serif; font-size:.78rem; color:#b46b86; margin-top:8px; }
+  .tiny { text-align:center; font-family:system-ui,sans-serif; color:#c07a94; font-size:.78rem; margin-top:14px; }
+  @media(max-width:420px){ .letter{padding:22px 19px}.message{font-size:1rem}.letter h1{font-size:1.45rem} }
+</style>
+</head>
+<body>
+<div class="scene" id="scene">
+  <div class="intro">A tiny surprise, made just for you 💗</div>
+  <div class="envelope-wrap">
+    <div class="envelope" id="envelope" aria-label="Open your love letter">
+      <div class="back"></div><div class="flap"></div><div class="pocket"></div><div class="seal">💌</div>
+    </div>
+  </div>
+  <div class="hint">Tap the envelope to open your letter</div>
+  <article class="letter" id="letter">
+    <h1>Happy 6 Monthsary, Baby! 💗</h1>
+    <div class="sub">Six months of us</div>
+    <div class="message">Hi love, this is kinda rushed, but I really do want you to know that I LOVE YOU SO, SO MUCH—kahit mapa-bagyo or lindol man 'yan.
+
+I may not be the best boyfriend, but I want you to know that I will keep you safe no matter what happens, and I will always do my best to bring you happiness.
+
+Thank you for being the best wife that I could ever ask for. I hope our feelings for each other stay strong and that we keep choosing each other, every single day.
+
+Happy 6 monthsary, baby koo! Mwaaaaps! 😚</div>
+    <section class="gallery">
+      <h2>Little pieces of you 💗</h2>
+      <div class="gallery-note">Some of my favorite pictures of my favorite person.</div>
+      <div class="photos">
+        <div class="photo-card" style="--tilt:-2deg"><img src="photos/photo1.jpeg" alt="Favorite photo"><span>my cutie ♡</span></div>
+        <div class="photo-card" style="--tilt:2deg"><img src="photos/photo2.jpeg" alt="A memory"><span>my handsome boy</span></div>
+        <div class="photo-card" style="--tilt:1deg"><img src="photos/photo3.jpeg" alt="A memory"><span>always making me smile</span></div>
+        <div class="photo-card" style="--tilt:-1deg"><img src="photos/photo4.jpeg" alt="A memory"><span>my favorite face</span></div>
+        <div class="photo-card" style="--tilt:-2deg"><img src="photos/photo5.jpeg" alt="A memory"><span>the one I adore</span></div>
+        <div class="photo-card" style="--tilt:2deg"><img src="photos/photo6.jpeg" alt="A memory"><span>you, you, you 💕</span></div>
+      </div>
+    </section>
+    <div class="signoff">I love you always. ♡</div>
+    <div class="tiny">Made with love, just for you</div>
+  </article>
+</div>
+<script>
+  const envelope = document.getElementById('envelope');
+  const scene = document.getElementById('scene');
+  envelope.addEventListener('click', () => {
+    scene.classList.add('open');
+    document.body.style.overflow='auto';
+    document.body.style.display='block';
+    document.body.style.padding='24px 12px';
+    for (let i=0;i<28;i++) {
+      setTimeout(() => {
+        const h=document.createElement('span'); h.className='heart'; h.textContent=['♥','♡','💗','💕'][Math.floor(Math.random()*4)];
+        h.style.left=Math.random()*100+'vw'; h.style.fontSize=(14+Math.random()*26)+'px'; h.style.animationDuration=(3+Math.random()*4)+'s';
+        document.body.appendChild(h); setTimeout(()=>h.remove(),7500);
+      }, i*90);
+    }
+  });
+</script>
+</body>
+</html>
